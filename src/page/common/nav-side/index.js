@@ -9,10 +9,10 @@ var navSide = {
     option: {
         name : '',
         navList : [
-            {name : 'user-center', desc : '个人中心', href : '/user-center.html'},
-            {name : 'order-list', desc : '我的订单', href : '/order-list.html'},
-            {name : 'pass-update', desc : '修改密码', href : '/pass-update.html'},
-            {name : 'about', desc : '关于YMALL', href : '/about.html'},
+            {name : 'user-center', desc : '个人中心', href : './user-center.html'},
+            {name : 'order-list', desc : '我的订单', href : './order-list.html'},
+            {name : 'user-pass-update', desc : '修改密码', href : './user-pass-update.html'},
+            {name : 'about', desc : '关于YMALL', href : './about.html'},
         ],
     },
     init : function(option) {
@@ -30,7 +30,7 @@ var navSide = {
         }
 
         //渲染HTML
-        var navHtml = _ym.renterHTML(templateIndex, {
+        var navHtml = _ym.renderHTML(templateIndex, {
             navList : this.option.navList
         });
 
@@ -38,4 +38,4 @@ var navSide = {
     }
 }
 
-module.exports = navSide
+module.exports = navSide;

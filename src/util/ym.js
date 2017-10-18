@@ -47,7 +47,7 @@ var _ym = {
     },
 
     //渲染HTML模板
-    renterHTML : function(htmlTemplate, data) {
+    renderHTML : function(htmlTemplate, data) {
         var template = Hogan.compile(htmlTemplate),
             result   = template.render(data);
         return result;
@@ -77,7 +77,7 @@ var _ym = {
     },
     //统一登录处理
     doLogin : function() {
-        window.location.href = './login.html?redirect=' + encodeURIComponent(window.location.href);
+        window.location.href = './user-login.html?redirect=' + encodeURIComponent(window.location.href);
     },
     //回家(回到主页)
     goHome : function() {

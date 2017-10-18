@@ -10,7 +10,6 @@ var nav = {
     init : function() {
         this.bindEvent();
         this.loadUserInfo();
-        this.loadUserInfo();
         return this;
     },
     bindEvent : function() {
@@ -19,8 +18,8 @@ var nav = {
             _ym.doLogin();
         });
         //注册点击事件
-        $('.js-regester').click(function() {
-            window.location.href = './regester.html';
+        $('.js-register').click(function() {
+            window.location.href = './user-register.html';
         });
         //退出点击事件
         $('.js-logout').click(function() {
@@ -34,7 +33,7 @@ var nav = {
     //加载用户信息
     loadUserInfo : function() {
         _user.checkLogin(function(res) {
-            $('.user.not-login').hide().siblings('user.login').show()
+            $('.user.not-login').hide().siblings('.user.login').show()
             .find('.username').text(res.username);
         }, function(errMsg) {
             // do nothing
