@@ -1,0 +1,25 @@
+<div class="banner">
+    <ul>
+        <li>
+            <a href="./list.html?categoryId=100021" target="_blank">
+                <img class="banner-img"src="../../image/floor/floor.jpg"/>
+            </a>
+        </li>
+        <li>
+            <a href="./list.html?categoryId=100021" target="_blank">
+                <img class="banner-img"src="../../image/floor/floor.jpg"/>
+            </a>    
+        </li>
+        <li>
+            <a href="./list.html?categoryId=100021" target="_blank">
+                <img class="banner-img"src="../../image/floor/floor.jpg"/>
+            </a>
+        </li>
+    </ul>
+    <div class="banner-arrow prev">
+        <i class="fa fa-angle-left"></i>
+    </div>
+    <div class="banner-arrow next">
+        <i class="fa fa-angle-right"></i>
+    </div>
+</div>

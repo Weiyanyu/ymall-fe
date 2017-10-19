@@ -3,15 +3,241 @@
 
 <head>
     <%= require('html-loader!./layout/head-common.html') %>
-        <title>ymall</title>
+        <title><%= htmlWebpackPlugin.options.title %> - ymall</title>
 </head>
 
 <body>
     <%= require('html-loader!./layout/nav.html') %>
     <%= require('html-loader!./layout/header.html') %>
-    <div class="page-wrap w">
-        <%= require('html-loader!./layout/nav-side.html') %>
-        <div class="content with-nav">test</div>
+    <div class="w">
+        <ul class="keywords-list">
+            <li class="keywords-item">
+                <a class="link" target="_blank" href="./list.html?keyword=手机">手机</a>
+                <a class="link" target="_blank" href="./list.html?keyword=数码">数码</a>
+            </li>
+            <li class="keywords-item">
+                <a class="link" target="_blank" href="./list.html?keyword=电脑">电脑</a>
+                <a class="link" target="_blank" href="./list.html?keyword=办公配件">办公配件</a>
+            </li>
+            <li class="keywords-item">
+                <a class="link" target="_blank" href="./list.html?keyword=电视">电视</a>
+                <a class="link" target="_blank" href="./list.html?keyword=空调">空调</a>
+                <a class="link" target="_blank" href="./list.html?keyword=冰箱">冰箱</a>
+                <a class="link" target="_blank" href="./list.html?keyword=洗衣机">洗衣机</a>
+            </li>
+            <li class="keywords-item">
+                <a class="link" target="_blank" href="./list.html?keyword=厨卫">厨卫</a>
+                <a class="link" target="_blank" href="./list.html?keyword=家电">家电</a>
+            </li>
+            <li class="keywords-item">
+                <a class="link" target="_blank" href="./list.html?keyword=家具">家具</a>
+                <a class="link" target="_blank" href="./list.html?keyword=家装">家装</a>
+            </li>
+            <li class="keywords-item">
+                <a class="link" target="_blank" href="./list.html?keyword=清洁用品">清洁用品</a>
+                <a class="link" target="_blank" href="./list.html?keyword=厕所清洁">厕所清洁</a>
+            </li>
+            <li class="keywords-item">
+                <a class="link" target="_blank" href="./list.html?keyword=化妆品">化妆品</a>
+                <a class="link" target="_blank" href="./list.html?keyword=面膜">面膜</a>
+                <a class="link" target="_blank" href="./list.html?keyword=面膜">洗面奶</a>
+            </li>
+            <li class="keywords-item">
+                <a class="link" target="_blank" href="./list.html?keyword=化妆品">化妆品</a>
+                <a class="link" target="_blank" href="./list.html?keyword=面膜">面膜</a>
+                <a class="link" target="_blank" href="./list.html?keyword=面膜">洗面奶</a>
+            </li>
+            <li class="keywords-item">
+                <a class="link" target="_blank" href="./list.html?keyword=化妆品">化妆品</a>
+                <a class="link" target="_blank" href="./list.html?keyword=面膜">面膜</a>
+                <a class="link" target="_blank" href="./list.html?keyword=面膜">洗面奶</a>
+            </li>
+            <li class="keywords-item">
+                <a class="link" target="_blank" href="./list.html?keyword=化妆品">化妆品</a>
+                <a class="link" target="_blank" href="./list.html?keyword=面膜">面膜</a>
+                <a class="link" target="_blank" href="./list.html?keyword=面膜">洗面奶</a>
+            </li>
+        </ul>
+        <div class="banner-con">
+            <div class="loading"></div>
+        </div>
+    </div>
+    <div class="w">
+        <div class="floor-wrap">
+            <h1 class="floor-title">F1 家用电器</h1>
+            <ul class="floor-list">
+                <li class="floor-item">
+                    <a href="./list.html?categoryId=">
+                    <span class="floor-text">双开门冰箱</span>
+                    <img class="floor-img" src="<%= require('../image/floor/floor.jpg') %>" alt="双开门冰箱" />
+                    </a>
+                </li>
+                <li class="floor-item">
+                    <a href="./list.html?categoryId=">
+                    <span class="floor-text">双开门冰箱</span>
+                    <img class="floor-img" src="<%= require('../image/floor/floor.jpg') %>" alt="双开门冰箱" />
+                    </a>
+                </li>
+                <li class="floor-item">
+                    <a href="./list.html?categoryId=">
+                    <span class="floor-text">双开门冰箱</span>
+                    <img class="floor-img" src="<%= require('../image/floor/floor.jpg') %>" alt="双开门冰箱" />
+                    </a>
+                </li>
+                <li class="floor-item">
+                    <a href="./list.html?categoryId=">
+                    <span class="floor-text">双开门冰箱</span>
+                    <img class="floor-img" src="<%= require('../image/floor/floor.jpg') %>" alt="双开门冰箱" />
+                    </a>
+                </li>
+                <li class="floor-item">
+                    <a href="./list.html?categoryId=">
+                    <span class="floor-text">双开门冰箱</span>
+                    <img class="floor-img" src="<%= require('../image/floor/floor.jpg') %>" alt="双开门冰箱" />
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="floor-wrap">
+            <h1 class="floor-title">F2 数码3C</h1>
+            <ul class="floor-list">
+                <li class="floor-item">
+                    <a href="./list.html?categoryId=">
+                    <span class="floor-text">双开门冰箱</span>
+                    <img class="floor-img" src="<%= require('../image/floor/floor.jpg') %>" alt="双开门冰箱" />
+                    </a>
+                </li>
+                <li class="floor-item">
+                    <a href="./list.html?categoryId=">
+                    <span class="floor-text">双开门冰箱</span>
+                    <img class="floor-img" src="<%= require('../image/floor/floor.jpg') %>" alt="双开门冰箱" />
+                    </a>
+                </li>
+                <li class="floor-item">
+                    <a href="./list.html?categoryId=">
+                    <span class="floor-text">双开门冰箱</span>
+                    <img class="floor-img" src="<%= require('../image/floor/floor.jpg') %>" alt="双开门冰箱" />
+                    </a>
+                </li>
+                <li class="floor-item">
+                    <a href="./list.html?categoryId=">
+                    <span class="floor-text">双开门冰箱</span>
+                    <img class="floor-img" src="<%= require('../image/floor/floor.jpg') %>" alt="双开门冰箱" />
+                    </a>
+                </li>
+                <li class="floor-item">
+                    <a href="./list.html?categoryId=">
+                    <span class="floor-text">双开门冰箱</span>
+                    <img class="floor-img" src="<%= require('../image/floor/floor.jpg') %>" alt="双开门冰箱" />
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="floor-wrap">
+            <h1 class="floor-title">F3 服装箱包</h1>
+            <ul class="floor-list">
+                <li class="floor-item">
+                    <a href="./list.html?categoryId=">
+                    <span class="floor-text">双开门冰箱</span>
+                    <img class="floor-img" src="<%= require('../image/floor/floor.jpg') %>" alt="双开门冰箱" />
+                    </a>
+                </li>
+                <li class="floor-item">
+                    <a href="./list.html?categoryId=">
+                    <span class="floor-text">双开门冰箱</span>
+                    <img class="floor-img" src="<%= require('../image/floor/floor.jpg') %>" alt="双开门冰箱" />
+                    </a>
+                </li>
+                <li class="floor-item">
+                    <a href="./list.html?categoryId=">
+                    <span class="floor-text">双开门冰箱</span>
+                    <img class="floor-img" src="<%= require('../image/floor/floor.jpg') %>" alt="双开门冰箱" />
+                    </a>
+                </li>
+                <li class="floor-item">
+                    <a href="./list.html?categoryId=">
+                    <span class="floor-text">双开门冰箱</span>
+                    <img class="floor-img" src="<%= require('../image/floor/floor.jpg') %>" alt="双开门冰箱" />
+                    </a>
+                </li>
+                <li class="floor-item">
+                    <a href="./list.html?categoryId=">
+                    <span class="floor-text">双开门冰箱</span>
+                    <img class="floor-img" src="<%= require('../image/floor/floor.jpg') %>" alt="双开门冰箱" />
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="floor-wrap">
+            <h1 class="floor-title">F4 食品生鲜</h1>
+            <ul class="floor-list">
+                <li class="floor-item">
+                    <a href="./list.html?categoryId=">
+                    <span class="floor-text">双开门冰箱</span>
+                    <img class="floor-img" src="<%= require('../image/floor/floor.jpg') %>" alt="双开门冰箱" />
+                    </a>
+                </li>
+                <li class="floor-item">
+                    <a href="./list.html?categoryId=">
+                    <span class="floor-text">双开门冰箱</span>
+                    <img class="floor-img" src="<%= require('../image/floor/floor.jpg') %>" alt="双开门冰箱" />
+                    </a>
+                </li>
+                <li class="floor-item">
+                    <a href="./list.html?categoryId=">
+                    <span class="floor-text">双开门冰箱</span>
+                    <img class="floor-img" src="<%= require('../image/floor/floor.jpg') %>" alt="双开门冰箱" />
+                    </a>
+                </li>
+                <li class="floor-item">
+                    <a href="./list.html?categoryId=">
+                    <span class="floor-text">双开门冰箱</span>
+                    <img class="floor-img" src="<%= require('../image/floor/floor.jpg') %>" alt="双开门冰箱" />
+                    </a>
+                </li>
+                <li class="floor-item">
+                    <a href="./list.html?categoryId=">
+                    <span class="floor-text">双开门冰箱</span>
+                    <img class="floor-img" src="<%= require('../image/floor/floor.jpg') %>" alt="双开门冰箱" />
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="floor-wrap">
+            <h1 class="floor-title">F5 酒水饮料</h1>
+            <ul class="floor-list">
+                <li class="floor-item">
+                    <a href="./list.html?categoryId=">
+                    <span class="floor-text">双开门冰箱</span>
+                    <img class="floor-img" src="<%= require('../image/floor/floor.jpg') %>" alt="双开门冰箱" />
+                    </a>
+                </li>
+                <li class="floor-item">
+                    <a href="./list.html?categoryId=">
+                    <span class="floor-text">双开门冰箱</span>
+                    <img class="floor-img" src="<%= require('../image/floor/floor.jpg') %>" alt="双开门冰箱" />
+                    </a>
+                </li>
+                <li class="floor-item">
+                    <a href="./list.html?categoryId=">
+                    <span class="floor-text">双开门冰箱</span>
+                    <img class="floor-img" src="<%= require('../image/floor/floor.jpg') %>" alt="双开门冰箱" />
+                    </a>
+                </li>
+                <li class="floor-item">
+                    <a href="./list.html?categoryId=">
+                    <span class="floor-text">双开门冰箱</span>
+                    <img class="floor-img" src="<%= require('../image/floor/floor.jpg') %>" alt="双开门冰箱" />
+                    </a>
+                </li>
+                <li class="floor-item">
+                    <a href="./list.html?categoryId=">
+                    <span class="floor-text">双开门冰箱</span>
+                    <img class="floor-img" src="<%= require('../image/floor/floor.jpg') %>" alt="双开门冰箱" />
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
     <%= require('html-loader!./layout/footer.html') %>
 </body>
