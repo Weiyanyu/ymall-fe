@@ -29,7 +29,7 @@
     right: 8px;
 }
 
-.sort-con .sort-item.asc .fa-sort-desc{
+.sort-con .sort-item.asc .fa-sort-asc{
     opacity: .6;
 }
 
@@ -60,7 +60,7 @@
 }
 
 .p-list-con .p-item .p-img-con .p-img {
-    widows: 100%;
+    width: 100%;
     height: 100%;
 }
 
