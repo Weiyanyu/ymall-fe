@@ -3,7 +3,7 @@
 var _ym = require('util/ym.js');
 
 var _product = {
-    //登录
+    //获取商品列表
     getProductList : function(listParam, resolve, reject) {
         _ym.request({
             url     : _ym.getServerUrl('/product/list.do'),
@@ -12,6 +12,18 @@ var _product = {
             error   : reject,
         });
     },
+    //获取商品详情
+    getProductDetail : function(productId, resolve, reject) {
+        _ym.request({
+            url     : _ym.getServerUrl('/product/detail.do'),
+            data : {
+                productId : productId,
+            },
+
+            success : resolve,
+            error   : reject,
+        });
+    }
     
 };
 

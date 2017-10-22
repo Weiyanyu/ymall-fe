@@ -27,6 +27,7 @@ var config = {
         'common'            : ['./src/page/common/index.js'],
         'index'             : ['./src/page/index/index.js'],
         'list'             : ['./src/page/list/index.js'],
+        'detail'             : ['./src/page/detail/index.js'],
         'user-login'        : ['./src/page/user-login/index.js'],
         'user-register'     : ['./src/page/user-register/index.js'],
         'user-pass-reset'   : ['./src/page/user-pass-reset/index.js'],
@@ -34,6 +35,7 @@ var config = {
         'user-center-update' : ['./src/page/user-center-update/index.js'],
         'user-pass-update' : ['./src/page/user-pass-update/index.js'],
         'result'            : ['./src/page/result/index.js']
+
     },
     output: {
         filename : 'js/[name].js',
@@ -76,6 +78,7 @@ var config = {
         new HtmlWebpackPlugin(getHTMLConfig('user-center-update', '修改个人信息')),
         new HtmlWebpackPlugin(getHTMLConfig('user-pass-update', '修改密码')),
         new HtmlWebpackPlugin(getHTMLConfig('list', '商品列表')),
+        new HtmlWebpackPlugin(getHTMLConfig('detail', '商品详情')),
         new HtmlWebpackPlugin(getHTMLConfig('result', '操作结果')),
 
         
