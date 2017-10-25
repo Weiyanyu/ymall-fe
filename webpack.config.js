@@ -28,6 +28,7 @@ var config = {
         'index'             : ['./src/page/index/index.js'],
         'list'             : ['./src/page/list/index.js'],
         'detail'             : ['./src/page/detail/index.js'],
+        'cart'             : ['./src/page/cart/index.js'],
         'user-login'        : ['./src/page/user-login/index.js'],
         'user-register'     : ['./src/page/user-register/index.js'],
         'user-pass-reset'   : ['./src/page/user-pass-reset/index.js'],
@@ -71,14 +72,19 @@ var config = {
         new ExtractTextPlugin("css/[name].css"),
         //HTML模板处理
         new HtmlWebpackPlugin(getHTMLConfig('index', '首页')),
+        //用户模块
         new HtmlWebpackPlugin(getHTMLConfig('user-login', '用户登录')),
         new HtmlWebpackPlugin(getHTMLConfig('user-register', '注册界面')),
         new HtmlWebpackPlugin(getHTMLConfig('user-pass-reset', '找回密码')),
         new HtmlWebpackPlugin(getHTMLConfig('user-center', '个人中心')),
         new HtmlWebpackPlugin(getHTMLConfig('user-center-update', '修改个人信息')),
         new HtmlWebpackPlugin(getHTMLConfig('user-pass-update', '修改密码')),
+
+        //商品列表和详情模块
         new HtmlWebpackPlugin(getHTMLConfig('list', '商品列表')),
         new HtmlWebpackPlugin(getHTMLConfig('detail', '商品详情')),
+        //购物车模块
+        new HtmlWebpackPlugin(getHTMLConfig('cart', '购物车')),
         new HtmlWebpackPlugin(getHTMLConfig('result', '操作结果')),
 
         

@@ -1,5 +1,6 @@
 'use strict';
 
+//使用hogan模板引擎
 const Hogan = require('hogan');
 
 var conf = {
