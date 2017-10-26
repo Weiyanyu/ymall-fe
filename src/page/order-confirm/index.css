@@ -1,0 +1,123 @@
+/*地址*/
+.address-item {
+    width: 200px;
+    float: left;
+    border: 3px dashed #ccc;
+    padding: 5px 8px;
+    margin: 20px 20px 0 0;
+    cursor: pointer;
+}
+
+.address-item.active {
+    border: 3px dashed #c60023;
+
+}
+
+.address-item:hover {
+    background: #fafafa;
+
+}
+
+
+
+.address-item .address-title {
+    color: #666;
+    height: 20px;
+    line-height: 20px;
+    overflow: hidden;
+    border-bottom: 1px solid #ddd;
+}
+
+.address-item .address-detail {
+    margin-top: 5px;
+    height: 40px;
+    line-height: 20px;
+    overflow: hidden;
+    color: #666;
+}
+
+.address-item .address-opera {
+    text-align: right;
+    visibility: hidden;
+}
+
+.address-item:hover .address-opera{
+    visibility: visible;
+}
+
+.address-item .address-opera .link {
+    margin-right: 5px;
+}
+
+.address-item .address-new {
+    text-align: center;
+    color: #ccc; 
+    padding: 10px 0;
+}
+
+.address-item .address-new .fa{
+    font-size: 45px;
+    line-height: 45px;
+}
+
+.address-item .address-new .text {
+    font-size: 13px;
+}
+
+/*商品清单*/
+.product-table {
+    width: 100%;
+    margin-top: 10px 0;
+    border-collapse: collapse;
+}
+.product-table th,td {
+    border-bottom: 1px dotted #ddd;
+}
+
+.product-table .cell-img {
+    width: 10%;
+    text-align: center;
+    padding: 10px;
+}
+
+.product-table .cell-img .p-img{
+    width: 80px;
+    height: 80px;
+    border: 1px solid #ddd;
+}
+.product-table .cell-info {
+    width: 30%;
+    text-align: left;
+}
+.product-table .cell-price {
+    width: 20%;
+    text-align: center;
+}
+.product-table .cell-count {
+    width: 20%;
+    text-align: center;
+}
+.product-table .cell-total {
+    width: 20%;
+    text-align: center;
+}
+
+/*提交*/
+.submit-con {
+    background: #eee;
+    text-align: right;
+}
+.submit-con .submit-total {
+    font-size: 18px;
+    color: #c60023;
+    font-weight: bold;
+    vertical-align: middle;
+    margin-right: 20px;
+}
+
+.submit-con .order-submit {
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    width: 100px;
+}
