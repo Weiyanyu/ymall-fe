@@ -12,6 +12,16 @@ var _address = {
             success : resolve,
             error   : reject,
         });
+    },
+    
+    //保存地址
+    save : function(addressInfo, resolve, reject) {
+        _ym.request({
+            url     : _ym.getServerUrl('/shipping/add.do'),
+            data    : addressInfo,
+            success : resolve,
+            error   : reject,
+        });
     }, 
 };
 

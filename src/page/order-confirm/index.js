@@ -10,6 +10,7 @@ var _order = require('service/order-service.js')
 var _address = require('service/address-service.js')
 var templateProduct = require('./product-list.string')
 var templateAddress = require('./address-list.string')
+var addressModal = require('./address-modal.js')
 
 var page =  {
     
@@ -26,28 +27,41 @@ var page =  {
         this.loadProductList();
     },
     bindEvent : function() {
-        var _this = this;
-        // // 选择 / 取消选择
-        // $(document).on('click', '.cart-select', function(){
-        //     var $this = $(this),
-        //         productId = $this.parents('.cart-table').data('product-id');
-        //     // 选中
-        //     if($this.is(':checked')){
-        //         _cart.selectProduct(productId, function(res){
-        //             _this.renderCart(res);
-        //         }, function(errMsg){
-        //             _this.showCartError();
-        //         });
-        //     }
-        //     // 取消选中
-        //     else{
-        //         _cart.unselectProduct(productId, function(res){
-        //             _this.renderCart(res);
-        //         }, function(errMsg){
-        //             _this.showCartError();
-        //         });
-        //     }
-        // });
+        var _this = this;  
+        // 地址选择 / 取消选择
+        $(document).on('click', '.address-item', function(){
+            var $this = $(this);
+
+            $this.addClass('active').siblings('.address-item').removeClass('active');
+            _this.data.selectedAddressId = $this.data('id');
+        });
+
+        $(document).on('click', '.order-submit', function(){
+            var $this = $(this),
+                shippingId = _this.data.selectedAddressId;
+            if (shippingId) {
+                _order.createOrder({
+                    shippingId : shippingId,
+                }, function(res) {
+                    window.location.href = './payment.html?orderNumber=' + res.orderNo;
+                }, function(errMsg) {
+                    _ym.errorTips(errMsg);
+                });
+            } else {
+                _ym.errorTips('请选择地址后再提交');
+            }
+        });
+
+        //地址添加
+        $(document).on('click', '.address-add', function(){
+            var $this = $(this);
+            addressModal.show({
+                isUpdate    : false,
+                onSuccess   : function() {
+                    _this.loadAddressList();
+                }
+            })
+        });
     },
     
     /*加载地址列表*/ 

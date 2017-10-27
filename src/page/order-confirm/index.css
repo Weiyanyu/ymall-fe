@@ -1,5 +1,5 @@
 /*地址*/
-.address-item {
+.address-item, .address-add {
     width: 200px;
     float: left;
     border: 3px dashed #ccc;
@@ -18,7 +18,9 @@
 
 }
 
-
+.address-add:hover {
+    background: #fafafa;
+}
 
 .address-item .address-title {
     color: #666;
@@ -49,18 +51,18 @@
     margin-right: 5px;
 }
 
-.address-item .address-new {
+.address-add .address-new {
     text-align: center;
     color: #ccc; 
     padding: 10px 0;
 }
 
-.address-item .address-new .fa{
+.address-add .address-new .fa{
     font-size: 45px;
     line-height: 45px;
 }
 
-.address-item .address-new .text {
+.address-add .address-new .text {
     font-size: 13px;
 }
 
@@ -121,3 +123,85 @@
     text-align: center;
     width: 100px;
 }
+
+/*modal 弹窗*/
+.modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #eee;
+    background: rgba(0, 0, 0, .4);
+    z-index: 1000;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.modal .modal-container {
+    width: 700px;
+    margin: 50px auto;
+    background: white;
+    border-radius: 4px;
+}
+
+.modal .modal-container .modal-header {
+    position: relative;
+    padding: 15px;
+    border-bottom: 1px solid #ccc;
+}
+.modal .modal-container .modal-header .modal-title {
+    font-size: 14px;
+}
+
+.modal .modal-container .modal-header .close{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.modal .modal-container .modal-body {
+    padding: 15px;
+}
+
+/*form 样式*/
+.form .form-line{
+    margin: 5px 0;
+    overflow: hidden;
+}
+
+.form .form-line .label {
+    display: block;
+    float: left;
+    width: 80px;
+    text-align: right;
+    height: 30px;
+    line-height: 30px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.form .form-line .label .required{
+    color: red;
+}
+
+.form .form-line .form-item {
+    padding: 0 5px;
+    height: 30px;
+    line-height: 30px;
+    outline: none;
+    margin-right: 10px;
+}
+
+.form .form-line .address-btn {
+    margin-left: 90px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 13px;
+}
+
+
+
+
