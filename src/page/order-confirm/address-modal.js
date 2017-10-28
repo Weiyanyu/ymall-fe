@@ -9,6 +9,7 @@ var addressModal =  {
     show : function(option) {
         //缓存option方便复用
         this.option = option;
+        this.option.data = option.data || {};
         this.$modalWrap = $('.modal-wrap');
         //渲染模板
         this.loadModal();
@@ -45,7 +46,13 @@ var addressModal =  {
             }
             //更新地址
             else if (isUpdate && receiverInfo.status) {
-
+                _address.update(receiverInfo.data, function(res){
+                    _ym.successTips('地址修改成功');
+                    _this.hide();
+                    typeof _this.option.onSuccess === 'function' && _this.option.onSuccess(res);
+                }, function(errMsg) {
+                    _ym.errorTips(errMsg);
+                });
             }
             //验证不通过
             else {
@@ -65,23 +72,35 @@ var addressModal =  {
     },
 
     loadModal : function() {
-        var addressModalHtml = _ym.renderHTML(templateAddressModal, this.option.data);
+        var addressModalHtml = _ym.renderHTML(templateAddressModal, {
+            isUpdate    : this.option.isUpdate,
+            data        : this.option.data,
+        });
         this.$modalWrap.html(addressModalHtml);
         //加载省份城市
         this.loadProvince();
-        this.loadCities();
     },
     //加载省份城市
     loadProvince : function() {
         var provinces = _cities.getProvinces() || [],
             $provinceSelect = this.$modalWrap.find('#receiver-province');
+
         $provinceSelect.html(this.getSelectOption(provinces));
+        //是否回填
+        if (this.option.isUpdate && this.option.data.receiverProvince) {
+            $provinceSelect.val(this.option.data.receiverProvince);
+            this.loadCities(this.option.data.receiverProvince);
+        }
     },
 
+    //加载城市
     loadCities : function(provinceName) {
         var cities = _cities.getCities(provinceName) || [],
             $citiesSelect = this.$modalWrap.find('#receiver-city');
         $citiesSelect.html(this.getSelectOption(cities));
+        if (this.option.isUpdate && this.option.data.receiverCity) {
+            $citiesSelect.val(this.option.data.receiverCity);
+        }
     },
 
 
@@ -106,7 +125,11 @@ var addressModal =  {
         receiverInfo.receiverAddress    = $.trim(this.$modalWrap.find('#receiver-address').val());
         receiverInfo.receiverPhone      = $.trim(this.$modalWrap.find('#receiver-phone').val());
         receiverInfo.receiverZip        = $.trim(this.$modalWrap.find('#receiver-zip').val());
-
+        
+        //如果是更新得情况，就提交隐藏表单的内容
+        if (this.option.isUpdate) {
+            receiverInfo.id    = this.$modalWrap.find('#receiver-id').val();
+        }
 
         if (!receiverInfo.receiverName) {
             result.errMsg = '请输入收件人姓名';
@@ -118,10 +141,10 @@ var addressModal =  {
             result.errMsg = '请选择收件人所在城市';
         }
         else if (!receiverInfo.receiverAddress) {
-            result.errMsg = '请选择收件人信息地址';
+            result.errMsg = '请输入收件人信息地址';
         }
         else if (!receiverInfo.receiverPhone) {
-            result.errMsg = '请选择收件人手机号';
+            result.errMsg = '请输入收件人手机号';
         }
         //用过所有验证
         else {

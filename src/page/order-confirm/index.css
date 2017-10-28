@@ -195,12 +195,18 @@
     margin-right: 10px;
 }
 
+.form .form-line #receiver-address {
+    width: 400px;
+}
+
 .form .form-line .address-btn {
     margin-left: 90px;
     height: 30px;
     line-height: 30px;
     font-size: 13px;
 }
+
+
 
 
 
