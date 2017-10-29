@@ -32,6 +32,7 @@ var config = {
         'order-confirm'             : ['./src/page/order-confirm/index.js'],
         'order-list'             : ['./src/page/order-list/index.js'],
         'order-detail'             : ['./src/page/order-detail/index.js'],
+        'payment'             : ['./src/page/payment/index.js'],
         'user-login'        : ['./src/page/user-login/index.js'],
         'user-register'     : ['./src/page/user-register/index.js'],
         'user-pass-reset'   : ['./src/page/user-pass-reset/index.js'],
@@ -88,9 +89,14 @@ var config = {
         new HtmlWebpackPlugin(getHTMLConfig('detail', '商品详情')),
         //购物车模块
         new HtmlWebpackPlugin(getHTMLConfig('cart', '购物车')),
+
+        //订单模块
         new HtmlWebpackPlugin(getHTMLConfig('order-confirm', '订单确认')),
         new HtmlWebpackPlugin(getHTMLConfig('order-list', '订单列表')),
         new HtmlWebpackPlugin(getHTMLConfig('order-detail', '订单详情')),
+
+        //支付
+        new HtmlWebpackPlugin(getHTMLConfig('payment', '订单支付')),
 
         new HtmlWebpackPlugin(getHTMLConfig('result', '操作结果')),
 
